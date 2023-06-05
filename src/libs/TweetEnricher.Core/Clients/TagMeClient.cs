@@ -1,4 +1,4 @@
-﻿namespace TweetEnricher.Clients;
+﻿namespace TweetEnricher.Core.Clients;
 
 public class TagMeClient : ITagMeClient
 {

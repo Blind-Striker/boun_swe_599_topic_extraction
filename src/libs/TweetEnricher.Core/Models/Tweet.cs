@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace TweetEnricher.Models;
+﻿namespace TweetEnricher.Core.Models;
 
 public record Tweet
 {

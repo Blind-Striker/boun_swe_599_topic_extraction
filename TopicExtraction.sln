@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ABCF80BB-C30
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetEnricher", "src\TweetEnricher\TweetEnricher.csproj", "{DA86CDC8-7A10-4C17-9B0A-9CABCCBFECBC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{E4F256EE-082D-4154-81BA-D248768AC8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetEnricher.Core", "src\libs\TweetEnricher.Core\TweetEnricher.Core.csproj", "{36D497C0-1913-405A-88BE-426D523ECF78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,18 @@ Global
 		{DA86CDC8-7A10-4C17-9B0A-9CABCCBFECBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA86CDC8-7A10-4C17-9B0A-9CABCCBFECBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA86CDC8-7A10-4C17-9B0A-9CABCCBFECBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D497C0-1913-405A-88BE-426D523ECF78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D497C0-1913-405A-88BE-426D523ECF78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D497C0-1913-405A-88BE-426D523ECF78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D497C0-1913-405A-88BE-426D523ECF78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DA86CDC8-7A10-4C17-9B0A-9CABCCBFECBC} = {ABCF80BB-C308-4002-8251-BBEDA4D45528}
+		{E4F256EE-082D-4154-81BA-D248768AC8A5} = {ABCF80BB-C308-4002-8251-BBEDA4D45528}
+		{36D497C0-1913-405A-88BE-426D523ECF78} = {E4F256EE-082D-4154-81BA-D248768AC8A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34EA0CDA-7B09-443F-BF46-E853FEA8A801}

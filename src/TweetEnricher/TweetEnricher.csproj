@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -11,9 +11,6 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
-		<PackageReference Include="MongoDB.Driver" Version="2.19.1" />
-		<PackageReference Include="Polly.Contrib.WaitAndRetry" Version="1.1.1" />
-		<PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -24,6 +21,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Properties\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\libs\TweetEnricher.Core\TweetEnricher.Core.csproj" />
 	</ItemGroup>
 
 </Project>

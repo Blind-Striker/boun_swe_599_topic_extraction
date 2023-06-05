@@ -1,4 +1,4 @@
-﻿namespace TweetEnricher.Services;
+﻿namespace TweetEnricher.Core.Services;
 
 public class MongoDbRepository<T> : IRepository<T>
 {

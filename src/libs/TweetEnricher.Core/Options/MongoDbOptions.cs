@@ -1,4 +1,4 @@
-﻿namespace TweetEnricher.Options;
+﻿namespace TweetEnricher.Core.Options;
 
 public class MongoDbOptions
 {

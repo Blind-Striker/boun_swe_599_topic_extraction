@@ -1,4 +1,4 @@
-﻿namespace TweetEnricher.Contracts;
+﻿namespace TweetEnricher.Core.Contracts;
 
 public interface IRepository<TEntity>
 {
