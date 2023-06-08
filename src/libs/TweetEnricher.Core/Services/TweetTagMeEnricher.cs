@@ -14,14 +14,14 @@ public class TweetTagMeEnricher : ITweetTagMeEnricher
         _tweetDataOptions = tweetDataOptions.Value;
     }
 
-    public async Task<IEnumerable<EnrichedTweet>> EnrichTweets()
+    public async Task<IEnumerable<TagMeEnrichedTweet>> EnrichTweets()
     {
         IEnumerable<Tweet> tweets = await _tweetDataReader.ReadAndFilterTweetsAsync();
 
-        var enrichedTweets = new List<EnrichedTweet>();
+        var enrichedTweets = new List<TagMeEnrichedTweet>();
 
         var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmssfff", CultureInfo.InvariantCulture);
-        string fileName = Path.Combine(_tweetDataOptions.DataFolderPath, $"{timestamp}.json");
+        string fileName = Path.Combine(_tweetDataOptions.DataFolderPath, $"tagme_{timestamp}.json");
 
         await using var fileStream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
 
@@ -32,7 +32,7 @@ public class TweetTagMeEnricher : ITweetTagMeEnricher
             {
                 TagMeResponse tagMeResponse = await _tagMeClient.GetAnnotationsAsync(tweet.Content);
 
-                var enrichedTweet = new EnrichedTweet(tweet.Content, tweet.Date, tweet.Favorite, tweet.Handle,
+                var enrichedTweet = new TagMeEnrichedTweet(tweet.Content, tweet.Date, tweet.Favorite, tweet.Handle,
                     tweet.HashTags,
                     tweet.Name, tweet.Replies, tweet.Retweets, tweet.SearchUrl, tweet.UnixTimestamp, tweet.Url,
                     tagMeResponse.Annotations);

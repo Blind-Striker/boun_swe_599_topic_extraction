@@ -3,5 +3,7 @@
 public interface ITweetDataReader
 {
     Task<IEnumerable<Tweet>> ReadAndFilterTweetsAsync();
-    Task<IEnumerable<EnrichedTweet>> ReadEnrichedTweets(string fileName);
+    Task<IEnumerable<TagMeEnrichedTweet>> ReadTagMeEnrichedTweets(string fileName);
+    Task<IEnumerable<WikidataEnrichedTweet>> ReadWikidataEnrichedTweets(string fileName);
+    Task<IEnumerable<SentimentEnrichedTweet>> SentimentEnrichedTweets(string fileName);
 }

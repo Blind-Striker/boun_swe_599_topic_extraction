@@ -2,5 +2,9 @@
 
 public class AppOptions
 {
-    public string EnrichedDataSource { get; set; }
+    public string TagMeEnrichedDataSource { get; set; }
+
+    public string WikidataEnrichedDataSource { get; set; }
+
+    public string SentimentEnrichedDataSource { get; set; }
 }

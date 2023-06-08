@@ -2,5 +2,5 @@
 
 public interface ITweetTagMeEnricher
 {
-    Task<IEnumerable<EnrichedTweet>> EnrichTweets();
+    Task<IEnumerable<TagMeEnrichedTweet>> EnrichTweets();
 }

@@ -34,14 +34,50 @@ public class TweetDataReader : ITweetDataReader
         return filteredTweets;
     }
 
-    public async Task<IEnumerable<EnrichedTweet>> ReadEnrichedTweets(string fileName)
+    public async Task<IEnumerable<TagMeEnrichedTweet>> ReadTagMeEnrichedTweets(string fileName)
     {
         string[] lines = await File.ReadAllLinesAsync(Path.Combine(_options.DataFolderPath,fileName));
-        var enrichedTweets = new List<EnrichedTweet>();
+        var enrichedTweets = new List<TagMeEnrichedTweet>();
 
         foreach (string line in lines)
         {
-            var enrichedTweet = JsonSerializer.Deserialize<EnrichedTweet>(line, TweetEnricherSerializerContext.Default.EnrichedTweet);
+            var enrichedTweet = JsonSerializer.Deserialize<TagMeEnrichedTweet>(line, TweetEnricherSerializerContext.Default.TagMeEnrichedTweet);
+
+            if (enrichedTweet != null)
+            {
+                enrichedTweets.Add(enrichedTweet);
+            }
+        }
+
+        return enrichedTweets;
+    }
+
+    public async Task<IEnumerable<WikidataEnrichedTweet>> ReadWikidataEnrichedTweets(string fileName)
+    {
+        string[] lines = await File.ReadAllLinesAsync(Path.Combine(_options.DataFolderPath,fileName));
+        var enrichedTweets = new List<WikidataEnrichedTweet>();
+
+        foreach (string line in lines)
+        {
+            var enrichedTweet = JsonSerializer.Deserialize<WikidataEnrichedTweet>(line, TweetEnricherSerializerContext.Default.WikidataEnrichedTweet);
+
+            if (enrichedTweet != null)
+            {
+                enrichedTweets.Add(enrichedTweet);
+            }
+        }
+
+        return enrichedTweets;
+    }
+
+    public async Task<IEnumerable<SentimentEnrichedTweet>> SentimentEnrichedTweets(string fileName)
+    {
+        string[] lines = await File.ReadAllLinesAsync(Path.Combine(_options.DataFolderPath,fileName));
+        var enrichedTweets = new List<SentimentEnrichedTweet>();
+
+        foreach (string line in lines)
+        {
+            var enrichedTweet = JsonSerializer.Deserialize<SentimentEnrichedTweet>(line, TweetEnricherSerializerContext.Default.SentimentEnrichedTweet);
 
             if (enrichedTweet != null)
             {
